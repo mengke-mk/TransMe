@@ -19,8 +19,8 @@ class Info(QtGui.QWidget):
 
         self.resize(460,420)
         self.setStyleSheet("background-color:#3B4141;")
-        #self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
-        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Popup)
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        #self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Popup)
 
         self.layout = QtGui.QVBoxLayout()
         self.setLayout(self.layout)
@@ -49,12 +49,15 @@ class Info(QtGui.QWidget):
     def on_off(self):
         self.flag = not self.flag
 
+    def leaveEvent(self, e):
+        self.hide()
+
 
     def query(self):
         if not self.flag:
             return
-        self.mut = QtCore.QMutex()
-        self.mut.lock()
+        #self.mut = QtCore.QMutex()
+        #self.mut.lock()
 
         html= u'''
             <style type="text/css">
@@ -101,12 +104,11 @@ class Info(QtGui.QWidget):
             <p style="color: #eeeeee"> %(web)s </p>''' % locals()
         self.web_view.setHtml(html)
         self.web_view.reload()
-        self.mut.unlock()
+        #self.mut.unlock()
         
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
-    #app = App(sys.argv)
     info = Info()
     #info.query()
     app.exec_()
