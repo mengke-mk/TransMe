@@ -18,10 +18,9 @@ def json_decode(j):
     return json.loads(j)
 
 def query(word):
-    if not word[-1].isalpha():
+    if len(word) > 1 and not word[-1].isalpha():
         word = word[0:-1]
     try:
-        #url = 'http://fanyi.youdao.com/openapi.do?keyfrom=tinxing&key=1312427901&type=data&doctype=json&version=1.1&q=' + word
         url = 'http://fanyi.youdao.com/openapi.do?keyfrom=TransMe&key=597592640&type=data&doctype=json&version=1.1&q=' + word
         data = urllib2.urlopen(url).read()
         js = json_decode(data)
