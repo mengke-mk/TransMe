@@ -11,6 +11,7 @@ goldendict太慢(丑)，而且CPU经常占用20%。
 ### Requirement
 - python 2.7
 - pyqt 4.8+
+
 ### Usage
 python transMe.py &
 或者把他写到alias里
