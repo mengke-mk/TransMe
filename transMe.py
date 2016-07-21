@@ -52,6 +52,9 @@ class Info(QtGui.QWidget):
     def leaveEvent(self, e):
         self.hide()
 
+    def keyPressEvent(self, e):
+        if e == QtCore.Qt.Key_F4:
+            self.flag = False
 
     def query(self):
         if not self.flag:
