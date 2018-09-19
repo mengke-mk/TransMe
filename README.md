@@ -2,8 +2,8 @@
 ### TransME
 基于pyqt的划词翻译工具,开启后，鼠标选中单词进行翻译，自动忽略选中的标点符号，程序运行在系统托盘，消耗资源极低。可以自己编写python脚本选择翻译的词典，默认使用有道。移开鼠标将关闭窗口
 <table><tr>
-<td><img src="http://7xl4a3.com1.z0.glb.clouddn.com/transme-1.png" width="465" height="425" alt="TransMe" border=0></td>
-<td><img src="http://7xl4a3.com1.z0.glb.clouddn.com/transme-2.png" width="426" height="425" alt="trayIcon" border=0></td>
+<td><img src="./transme-1.png" width="465" height="425" alt="TransMe" border=0></td>
+<td><img src="./transme-2.png" width="426" height="425" alt="trayIcon" border=0></td>
 </tr></table>
     
 ### Motivation
